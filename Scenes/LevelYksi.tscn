@@ -126,3 +126,21 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground/fillerGround/StaticBody2D"]
 shape = SubResource( 8 )
+
+[node name="ladder1" type="Node2D" parent="ground"]
+
+[node name="Node" type="Node" parent="ground/ladder1"]
+
+[node name="longPlatform" type="Sprite" parent="ground/ladder1/Node"]
+position = Vector2( 2113.42, 1078.15 )
+scale = Vector2( 0.2, 0.994127 )
+texture = ExtResource( 2 )
+
+[node name="longPlatform2" type="Sprite" parent="ground/ladder1/Node"]
+position = Vector2( 1868.2, 895.25 )
+scale = Vector2( 0.2, 1 )
+texture = ExtResource( 2 )
+
+[node name="longPlatform3" type="Sprite" parent="ground/ladder1/Node"]
+position = Vector2( 2421.68, 624.027 )
+texture = ExtResource( 2 )
