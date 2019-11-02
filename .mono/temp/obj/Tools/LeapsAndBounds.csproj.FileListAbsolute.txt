@@ -1,0 +1,6 @@
+C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\obj\Tools\LeapsAndBounds.csprojAssemblyReference.cache
+C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\obj\Tools\LeapsAndBounds.csproj.CoreCompileInputs.cache
+C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\bin\Tools\LeapsAndBounds.dll
+C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\bin\Tools\LeapsAndBounds.pdb
+C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\obj\Tools\LeapsAndBounds.dll
+C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\obj\Tools\LeapsAndBounds.pdb

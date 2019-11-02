@@ -13,9 +13,27 @@ public class TitleScreenScript : Node
         
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+	private void _on_PlayButton_pressed()
+	{
+	    GetTree().ChangeScene("res://Scenes/LevelYksi.tscn");
+	}
+	
+	private void _on_AboutButton_pressed()
+	{
+	    GetTree().ChangeScene("res://Scenes/AboutScreen.tscn");
+	}
+	
+	private void _on_AboutBackButton_pressed()
+	{
+	    GetTree().ChangeScene("res://Scenes/TitleScreen.tscn");
+	}
 }
+
+
+
+
+
+
+
+
+

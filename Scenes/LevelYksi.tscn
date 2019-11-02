@@ -1,3 +1,128 @@
-[gd_scene format=2]
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Ground/longPlatform.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ground/shortBox.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Ground/fillerGround.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 399.837, 30.6769 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 398.54, 31.5097 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 119.976, 98.1172 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 249.87, 247.738 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 400.108, 32.5919 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 250.042, 250.416 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 250.251, 247.842 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 249.416, 250.2 )
 
 [node name="LevelYksi" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 161.845, 451.165 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 510, 300 )
+current = true
+
+[node name="ground" type="Node2D" parent="."]
+
+[node name="longPlatform" type="Sprite" parent="ground"]
+editor/display_folded = true
+position = Vector2( 370, 666.264 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/longPlatform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/longPlatform/StaticBody2D"]
+position = Vector2( 19.8094, -84.2536 )
+shape = SubResource( 1 )
+
+[node name="longPlatform2" type="Sprite" parent="ground"]
+editor/display_folded = true
+position = Vector2( 830.5, 469.468 )
+scale = Vector2( 0.373, 0.478 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/longPlatform2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/longPlatform2/StaticBody2D"]
+position = Vector2( 19.1687, -87.2345 )
+shape = SubResource( 2 )
+
+[node name="shortBox" type="Sprite" parent="ground"]
+editor/display_folded = true
+position = Vector2( 563, 319.968 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/shortBox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/shortBox/StaticBody2D"]
+position = Vector2( -0.794556, 23.0384 )
+shape = SubResource( 3 )
+
+[node name="fillerGround2" type="Sprite" parent="ground"]
+editor/display_folded = true
+position = Vector2( 1097, 753.968 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/fillerGround2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/fillerGround2/StaticBody2D"]
+shape = SubResource( 4 )
+
+[node name="longPlatform3" type="Sprite" parent="ground"]
+editor/display_folded = true
+position = Vector2( 363.18, 865.808 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/longPlatform3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/longPlatform3/StaticBody2D"]
+position = Vector2( 18.9511, -83.1309 )
+shape = SubResource( 7 )
+
+[node name="fillerGround3" type="Sprite" parent="ground"]
+editor/display_folded = true
+position = Vector2( 1305, 129.479 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/fillerGround3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/fillerGround3/StaticBody2D"]
+shape = SubResource( 6 )
+
+[node name="fillerGround4" type="Sprite" parent="ground"]
+editor/display_folded = true
+position = Vector2( 1593.25, 753.916 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/fillerGround4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/fillerGround4/StaticBody2D"]
+shape = SubResource( 5 )
+
+[node name="fillerGround" type="Sprite" parent="ground"]
+editor/display_folded = true
+position = Vector2( 1550.6, 1367.99 )
+scale = Vector2( 6.17687, 1 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground/fillerGround"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/fillerGround/StaticBody2D"]
+shape = SubResource( 8 )
