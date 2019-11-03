@@ -22,15 +22,35 @@ public class Player : KinematicBody2D
 
 	public override void _PhysicsProcess(float delta){
 		movement.y += gravity;
-		PlayerMovement();
+		PlayerMovement(delta);
 	}
 	
-	void PlayerMovement(){
+	void PlayerMovement(float delta){
+		animation.Play("idle");
 		if(Input.IsActionPressed("jump")){
 			if(IsOnFloor())
 			{
 				movement.y = jump_force;
-				animation.Play("jump");
+			}	
+		}
+		else if(Input.IsActionPressed("jump") && Input.IsActionPressed("move_right") ){
+			if(IsOnFloor())
+			{
+				movement.y = jump_force;
+			}	
+			
+			if(!IsOnFloor()){
+				movement.x = move_speed;	
+			}
+		}
+		else if(Input.IsActionPressed("jump") && Input.IsActionPressed("move_left")){
+			if(IsOnFloor()){
+				movement.y = jump_force;
+			}
+			
+			if(!IsOnFloor())
+			{
+				movement.x = -move_speed;
 			}	
 		}
 		else if(Input.IsActionPressed("move_left")){
@@ -44,6 +64,20 @@ public class Player : KinematicBody2D
 				movement.x = move_speed;	
 			}
 		}
+		else if(Input.IsActionPressed("rotate")){
+			if(!IsOnFloor()){
+					var currentRotation = GetRotationDegrees();
+					var rotate = currentRotation + 1;
+					SetRotationDegrees(rotate);
+			}
+		}
+		else if(Input.IsActionPressed("rotate_left")){
+			if(!IsOnFloor()){
+					var currentRotation = GetRotationDegrees();
+					var rotate = currentRotation - 1;
+					SetRotationDegrees(rotate);
+			}
+		}
 		else{
 			movement.x = 0f;
 			if(IsOnFloor()){
@@ -54,4 +88,17 @@ public class Player : KinematicBody2D
 		
 		movement = MoveAndSlide(movement, up_direction);
 	}
+	
+	private void _on_Player_body_entered(PhysicsBody2D body)
+	{
+	    if(body.IsInGroup("pickup")){
+			GD.Print("pickup!!!");
+//			GetParent().GetNode<CameraFollow>("Main Camera").playerDied = true;
+//			GetParent<GamePlay>().PlayerDied();
+//			QueueFree();
+		}
+	}
 }
+
+
+
