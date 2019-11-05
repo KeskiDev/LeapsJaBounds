@@ -6,11 +6,15 @@ public class Player : KinematicBody2D
     private Vector2 movement = Vector2.Zero;
 	private float move_speed = 400f;
 	private float gravity = 30f;
-	private float jump_force = -850f;
+	private float jump_force = -750f;
+	private float extra_jump = -970f;
 	private Vector2 up_direction = Vector2.Up;
 	private bool moving = false;
 	private bool jumping = false;
 	private bool moveRight = true;
+	public bool hasPickupYksi = false;
+	public bool hasPickupKaksi = false;
+	public bool hasPickupKolme = false;
 	
 	private AnimatedSprite animation;
 
@@ -23,6 +27,10 @@ public class Player : KinematicBody2D
 	public override void _PhysicsProcess(float delta){
 		movement.y += gravity;
 		PlayerMovement(delta);
+		
+		if(hasPickupKolme && hasPickupKaksi && hasPickupYksi){
+			//todo open gate to the next level
+		}
 	}
 	
 	void PlayerMovement(float delta){
@@ -30,38 +38,73 @@ public class Player : KinematicBody2D
 		if(Input.IsActionPressed("jump")){
 			if(IsOnFloor())
 			{
-				movement.y = jump_force;
+				if(hasPickupYksi){
+					movement.y = extra_jump;
+				}
+				else{
+					movement.y = jump_force;	
+				}
 			}	
 		}
 		else if(Input.IsActionPressed("jump") && Input.IsActionPressed("move_right") ){
 			if(IsOnFloor())
 			{
-				movement.y = jump_force;
+				if(hasPickupYksi){
+					movement.y = extra_jump;
+				}
+				else{
+					movement.y = jump_force;	
+				}
 			}	
 			
-			if(!IsOnFloor()){
-				movement.x = move_speed;	
+			if(!hasPickupKaksi){
+				if(!IsOnFloor()){
+					movement.x = move_speed;	
+				}	
+			}
+			else{
+				movement.x = move_speed;
 			}
 		}
 		else if(Input.IsActionPressed("jump") && Input.IsActionPressed("move_left")){
 			if(IsOnFloor()){
-				movement.y = jump_force;
+				if(hasPickupYksi){
+					movement.y = extra_jump;
+				}
+				else{
+					movement.y = jump_force;	
+				}
 			}
 			
-			if(!IsOnFloor())
-			{
+			if(!hasPickupKaksi){
+				if(!IsOnFloor())
+				{
+					movement.x = -move_speed;
+				}	
+			}
+			else{
 				movement.x = -move_speed;
-			}	
+			}
 		}
 		else if(Input.IsActionPressed("move_left")){
-			if(!IsOnFloor())
-			{
+			if(!hasPickupKaksi){
+				if(!IsOnFloor())
+				{
+					movement.x = -move_speed;
+				}	
+			}
+			else{
 				movement.x = -move_speed;
-			}	
+			}
 		}
 		else if(Input.IsActionPressed("move_right")){
-			if(!IsOnFloor()){
-				movement.x = move_speed;	
+			if(!hasPickupKaksi){
+				if(!IsOnFloor()){
+					movement.x = move_speed;	
+				}	
+			}
+			else{
+				movement.x = move_speed;
 			}
 		}
 		else if(Input.IsActionPressed("rotate")){
@@ -92,10 +135,15 @@ public class Player : KinematicBody2D
 	private void _on_Player_body_entered(PhysicsBody2D body)
 	{
 	    if(body.IsInGroup("pickup")){
-			GD.Print("pickup!!!");
-//			GetParent().GetNode<CameraFollow>("Main Camera").playerDied = true;
-//			GetParent<GamePlay>().PlayerDied();
-//			QueueFree();
+			if(body.Name.Contains("Pickup1")){
+				hasPickupYksi = true;
+			}
+			else if(body.Name.Contains("Pickup2")){
+				hasPickupKaksi = true;
+			}
+			else if(body.Name.Contains("Pickup3")){
+				hasPickupKolme = true;
+			}
 		}
 	}
 }

@@ -246,7 +246,7 @@ position = Vector2( 3164.41, 534.001 )
 shape = SubResource( 15 )
 
 [node name="Pickup3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2339.34, 73.8298 )
+position = Vector2( 2368.81, 203.303 )
 scale = Vector2( 0.375, 0.375 )
 
 [node name="Pickup1" parent="." instance=ExtResource( 8 )]
