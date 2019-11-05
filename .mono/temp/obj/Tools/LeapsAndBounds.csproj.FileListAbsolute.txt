@@ -4,3 +4,8 @@ C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\bin\Tools\LeapsAndBounds.dll
 C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\bin\Tools\LeapsAndBounds.pdb
 C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\obj\Tools\LeapsAndBounds.dll
 C:\GameDev\LeapsAndBounds\Leaps\.mono\temp\obj\Tools\LeapsAndBounds.pdb
+C:\Projects\Leaps\LeapsJaBounds\.mono\temp\obj\Tools\LeapsAndBounds.csprojAssemblyReference.cache
+C:\Projects\Leaps\LeapsJaBounds\.mono\temp\obj\Tools\LeapsAndBounds.dll
+C:\Projects\Leaps\LeapsJaBounds\.mono\temp\obj\Tools\LeapsAndBounds.pdb
+C:\Projects\Leaps\LeapsJaBounds\.mono\temp\bin\Tools\LeapsAndBounds.dll
+C:\Projects\Leaps\LeapsJaBounds\.mono\temp\bin\Tools\LeapsAndBounds.pdb

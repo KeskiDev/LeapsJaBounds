@@ -30,7 +30,15 @@ public class Player : KinematicBody2D
 		
 		if(hasPickupKolme && hasPickupKaksi && hasPickupYksi){
 			//todo open gate to the next level
+			openGate();
 		}
+	}
+	
+	void openGate(){
+		//todo
+		//remove closed gate 
+		//add the open gate 
+		
 	}
 	
 	void PlayerMovement(float delta){
@@ -135,15 +143,19 @@ public class Player : KinematicBody2D
 	private void _on_Player_body_entered(PhysicsBody2D body)
 	{
 	    if(body.IsInGroup("pickup")){
-			if(body.Name.Contains("Pickup1")){
+			if(body.Name.Contains("Key1")){
 				hasPickupYksi = true;
 			}
-			else if(body.Name.Contains("Pickup2")){
+			else if(body.Name.Contains("Key2")){
 				hasPickupKaksi = true;
 			}
-			else if(body.Name.Contains("Pickup3")){
+			else if(body.Name.Contains("KingKey")){
 				hasPickupKolme = true;
 			}
+		}
+		else if(body.IsInGroup("openGate")){
+			//fade out?
+			//load the second level
 		}
 	}
 }
