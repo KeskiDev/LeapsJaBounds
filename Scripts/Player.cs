@@ -30,16 +30,10 @@ public class Player : KinematicBody2D
 		
 		if(hasPickupKolme && hasPickupKaksi && hasPickupYksi){
 			//todo open gate to the next level
-			openGate();
+			//GetParent<GamePlay>().OpenGate();
 		}
 	}
 	
-	void openGate(){
-		//todo
-		//remove closed gate 
-		//add the open gate 
-		
-	}
 	
 	void PlayerMovement(float delta){
 		animation.Play("idle");

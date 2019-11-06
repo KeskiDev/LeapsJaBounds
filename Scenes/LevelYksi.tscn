@@ -1,14 +1,16 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/CameraScript.cs" type="Script" id=2]
-[ext_resource path="res://Assets/Ground/longPlatform.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Ground/shortBox.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Ground/fillerGround.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Gateway.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Key2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Key1.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/KingKey.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/GamePlay.cs" type="Script" id=1]
+[ext_resource path="res://Scenes/OpenGate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Gateway.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/CameraScript.cs" type="Script" id=5]
+[ext_resource path="res://Assets/Ground/longPlatform.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ground/shortBox.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ground/fillerGround.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Key2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Key1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/KingKey.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 399.837, 30.6769 )
@@ -56,8 +58,11 @@ extents = Vector2( 46.5491, 910.357 )
 extents = Vector2( 75.3718, 948.284 )
 
 [node name="LevelYksi" type="Node2D"]
+script = ExtResource( 1 )
+openGate = ExtResource( 2 )
+shutGate = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 104.59, 257.667 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -67,14 +72,15 @@ limit_left = 0
 limit_top = 0
 limit_right = 3090
 limit_bottom = 1180
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="ground" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="longPlatform" type="Sprite" parent="ground"]
 editor/display_folded = true
 position = Vector2( 370, 666.264 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/longPlatform"]
 
@@ -86,7 +92,7 @@ shape = SubResource( 1 )
 editor/display_folded = true
 position = Vector2( 830.5, 469.468 )
 scale = Vector2( 0.373, 0.478 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/longPlatform2"]
 
@@ -98,7 +104,7 @@ shape = SubResource( 2 )
 editor/display_folded = true
 position = Vector2( 563, 319.968 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/shortBox"]
 
@@ -109,7 +115,7 @@ shape = SubResource( 3 )
 [node name="fillerGround2" type="Sprite" parent="ground"]
 editor/display_folded = true
 position = Vector2( 1097, 753.968 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/fillerGround2"]
 
@@ -119,7 +125,7 @@ shape = SubResource( 4 )
 [node name="longPlatform3" type="Sprite" parent="ground"]
 editor/display_folded = true
 position = Vector2( 363.18, 865.808 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/longPlatform3"]
 
@@ -130,7 +136,7 @@ shape = SubResource( 5 )
 [node name="fillerGround3" type="Sprite" parent="ground"]
 editor/display_folded = true
 position = Vector2( 1305, 129.479 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/fillerGround3"]
 
@@ -140,7 +146,7 @@ shape = SubResource( 6 )
 [node name="fillerGround4" type="Sprite" parent="ground"]
 editor/display_folded = true
 position = Vector2( 1593.25, 753.916 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/fillerGround4"]
 
@@ -151,7 +157,7 @@ shape = SubResource( 7 )
 editor/display_folded = true
 position = Vector2( 1550.6, 1367.99 )
 scale = Vector2( 6.17687, 1 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/fillerGround"]
 
@@ -167,7 +173,7 @@ shape = SubResource( 8 )
 editor/display_folded = true
 position = Vector2( 2113.42, 1078.15 )
 scale = Vector2( 0.2, 0.994127 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/ladder1/Node/longPlatform"]
 
@@ -179,7 +185,7 @@ shape = SubResource( 9 )
 editor/display_folded = true
 position = Vector2( 1868.2, 895.25 )
 scale = Vector2( 0.2, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/ladder1/Node/longPlatform2"]
 
@@ -190,7 +196,7 @@ shape = SubResource( 10 )
 [node name="longPlatform4" type="Sprite" parent="ground/ladder1/Node"]
 position = Vector2( 2251.99, 859.017 )
 scale = Vector2( 0.2, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/ladder1/Node/longPlatform4"]
 
@@ -201,7 +207,7 @@ shape = SubResource( 11 )
 [node name="longPlatform5" type="Sprite" parent="ground/ladder1/Node"]
 position = Vector2( 2468.11, 767.597 )
 scale = Vector2( 0.2, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/ladder1/Node/longPlatform5"]
 position = Vector2( -52.7432, 86.1461 )
@@ -213,7 +219,7 @@ shape = SubResource( 11 )
 [node name="longPlatform3" type="Sprite" parent="ground/ladder1/Node"]
 editor/display_folded = true
 position = Vector2( 2349.86, 627.367 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/ladder1/Node/longPlatform3"]
 
@@ -223,17 +229,13 @@ shape = SubResource( 12 )
 
 [node name="fillerGround" type="Sprite" parent="ground/ladder1/Node"]
 position = Vector2( 2843.33, 868.95 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/ladder1/Node/fillerGround"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground/ladder1/Node/fillerGround/StaticBody2D"]
 position = Vector2( 0.000244141, -93.0781 )
 shape = SubResource( 13 )
-
-[node name="Gateway" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2595.32, 960.576 )
-z_index = 1
 
 [node name="borderLeft" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -249,12 +251,12 @@ editor/display_folded = true
 position = Vector2( 3164.41, 534.001 )
 shape = SubResource( 15 )
 
-[node name="Key2" parent="." instance=ExtResource( 7 )]
+[node name="Key2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 65.6692, 867.882 )
 scale = Vector2( 0.375, 0.375 )
 
-[node name="Key1" parent="." instance=ExtResource( 8 )]
+[node name="Key1" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2257.94, 616.2 )
 
-[node name="KingKey" parent="." instance=ExtResource( 9 )]
+[node name="KingKey" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2357.86, 205.3 )
