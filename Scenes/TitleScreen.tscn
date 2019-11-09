@@ -19,24 +19,24 @@ size = 32
 font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 1054.97, 10 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 47.7884, 19.5316 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 49.6399, 14.0682 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 231.756, 10 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 287.12, 10 )
+extents = Vector2( 612.104, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 10, 326.543 )
+extents = Vector2( 47.7884, 19.5316 )
 
 [sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 49.6399, 14.0682 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 231.756, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 287.12, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 326.543 )
+
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 90.713, 328.301 )
 
 [sub_resource type="RectangleShape2D" id=11]
@@ -81,25 +81,25 @@ scale = Vector2( 1.40936, 1 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
-position = Vector2( 13.3568, 556.922 )
+position = Vector2( 489.586, 556.148 )
 shape = SubResource( 4 )
 
 [node name="playBox" type="CollisionShape2D" parent="ground"]
 position = Vector2( 344.236, 507.867 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="AboutBox" type="CollisionShape2D" parent="ground"]
 position = Vector2( 732.455, 508.433 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ground"]
 position = Vector2( 500.333, 303.481 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ground"]
 position = Vector2( 514.687, 190.701 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="Gate" type="StaticBody2D" parent="."]
@@ -110,11 +110,11 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate"]
 position = Vector2( 1037.27, 288.326 )
-shape = SubResource( 5 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Gate"]
 position = Vector2( -93.1786, 268.987 )
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 
 [node name="DoorBox" type="CollisionShape2D" parent="Gate"]
 position = Vector2( 109.357, 403.272 )
