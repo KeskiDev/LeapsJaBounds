@@ -259,4 +259,4 @@ scale = Vector2( 0.375, 0.375 )
 position = Vector2( 2257.94, 616.2 )
 
 [node name="KingKey" parent="." instance=ExtResource( 11 )]
-position = Vector2( 2357.86, 205.3 )
+position = Vector2( 2357.09, 230.835 )

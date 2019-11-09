@@ -36,10 +36,11 @@ public class Player : KinematicBody2D
 	
 	
 	void PlayerMovement(float delta){
-		animation.Play("idle");
+		
 		if(Input.IsActionPressed("jump")){
 			if(IsOnFloor())
 			{
+				animation.Play("jump");
 				if(hasPickupYksi){
 					movement.y = extra_jump;
 				}
@@ -51,6 +52,7 @@ public class Player : KinematicBody2D
 		else if(Input.IsActionPressed("jump") && Input.IsActionPressed("move_right") ){
 			if(IsOnFloor())
 			{
+				animation.Play("jump");
 				if(hasPickupYksi){
 					movement.y = extra_jump;
 				}
@@ -70,6 +72,7 @@ public class Player : KinematicBody2D
 		}
 		else if(Input.IsActionPressed("jump") && Input.IsActionPressed("move_left")){
 			if(IsOnFloor()){
+				animation.Play("jump");
 				if(hasPickupYksi){
 					movement.y = extra_jump;
 				}
