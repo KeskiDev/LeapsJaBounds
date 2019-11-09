@@ -28,9 +28,10 @@ public class Player : KinematicBody2D
 		movement.y += gravity;
 		PlayerMovement(delta);
 		
-		if(hasPickupKolme && hasPickupKaksi && hasPickupYksi){
+		if(hasPickupKolme){
 			//todo open gate to the next level
-			//GetParent<GamePlay>().OpenGate();
+			GetParent<GamePlay>().OpenGate();
+			
 		}
 	}
 	
@@ -142,17 +143,19 @@ public class Player : KinematicBody2D
 	    if(body.IsInGroup("pickup")){
 			if(body.Name.Contains("Key1")){
 				hasPickupYksi = true;
+				var key = GetParent<GamePlay>().GetNode("Key1");
+				GetParent<GamePlay>().RemoveChild(key);
 			}
 			else if(body.Name.Contains("Key2")){
 				hasPickupKaksi = true;
+				var key = GetParent<GamePlay>().GetNode("Key2");
+				GetParent<GamePlay>().RemoveChild(key);
 			}
 			else if(body.Name.Contains("KingKey")){
 				hasPickupKolme = true;
+				var key = GetParent<GamePlay>().GetNode("KingKey");
+				GetParent<GamePlay>().RemoveChild(key);
 			}
-		}
-		else if(body.IsInGroup("openGate")){
-			//fade out?
-			//load the second level
 		}
 	}
 }

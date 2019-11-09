@@ -24,7 +24,7 @@ margin_top = 31.0
 margin_right = 738.0
 margin_bottom = 537.0
 custom_fonts/font = SubResource( 1 )
-text = "Take a leap of faith. Move through the levels to find your missing pieces and make the shape found at the end of the level. 
+text = "Take a leap of faith. Move through the levels to find the keys needed to unlock the gate.
 The catch is you can only move left and right and rotate after you have jumped.
 
 Jump - Up arrow

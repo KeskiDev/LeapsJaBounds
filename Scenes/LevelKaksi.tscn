@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/LevelKaksi.cs" type="Script" id=1]
+
+[node name="LevelKaksi" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Nothing here yet...
+"
+
+[node name="PlayAgain" type="MenuButton" parent="."]
+margin_left = 102.858
+margin_top = 70.6625
+margin_right = 231.858
+margin_bottom = 93.6625
+text = "Play again?"
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayButton_pressed"]

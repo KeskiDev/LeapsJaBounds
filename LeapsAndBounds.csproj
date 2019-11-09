@@ -53,6 +53,8 @@
     <Compile Include="Scripts\CameraScript.cs" />
     <Compile Include="Scripts\GamePlay.cs" />
     <Compile Include="Scripts\GateScript.cs" />
+    <Compile Include="Scripts\KeyScript.cs" />
+    <Compile Include="Scripts\LevelKaksi.cs" />
     <Compile Include="Scripts\Player.cs" />
     <Compile Include="Scripts\TitleScreenScript.cs" />
   </ItemGroup>

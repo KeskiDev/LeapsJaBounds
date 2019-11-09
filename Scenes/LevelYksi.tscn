@@ -49,7 +49,7 @@ extents = Vector2( 400.844, 31.7335 )
 extents = Vector2( 399.935, 33.5285 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 250.527, 156.236 )
+extents = Vector2( 250.527, 249.122 )
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 46.5491, 910.357 )
@@ -228,13 +228,14 @@ position = Vector2( 21.7122, -83.0326 )
 shape = SubResource( 12 )
 
 [node name="fillerGround" type="Sprite" parent="ground/ladder1/Node"]
-position = Vector2( 2843.33, 868.95 )
+position = Vector2( 2846.19, 765.848 )
+scale = Vector2( 1, 0.587592 )
 texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground/ladder1/Node/fillerGround"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground/ladder1/Node/fillerGround/StaticBody2D"]
-position = Vector2( 0.000244141, -93.0781 )
+position = Vector2( -1.43188, 2.40579 )
 shape = SubResource( 13 )
 
 [node name="borderLeft" type="StaticBody2D" parent="."]
@@ -260,3 +261,8 @@ position = Vector2( 2257.94, 616.2 )
 
 [node name="KingKey" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2357.09, 230.835 )
+
+[node name="fillerGround" type="Sprite" parent="."]
+position = Vector2( 3014.59, 1042.07 )
+scale = Vector2( 1.09451, 1 )
+texture = ExtResource( 8 )

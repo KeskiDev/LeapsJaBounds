@@ -11,6 +11,15 @@ public class GateScript : Node2D
         
     }
 	
-	
+	private void _on_Gate_entered(PhysicsBody2D body)
+	{
+		if(body.IsInGroup("Player")){
+			//have to change this to be more reusable
+			GetTree().ChangeScene("res://Scenes/LevelKaksi.tscn");
+		}
+	}
 
 }
+
+
+
