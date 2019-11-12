@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/GamePlay.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/OpenGate.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Scenes/Key2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Key1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/KingKey.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Gate/blankWall.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/brick.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 399.837, 30.6769 )
@@ -75,7 +77,6 @@ limit_bottom = 1180
 script = ExtResource( 5 )
 
 [node name="ground" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="longPlatform" type="Sprite" parent="ground"]
 editor/display_folded = true
@@ -154,7 +155,6 @@ texture = ExtResource( 8 )
 shape = SubResource( 7 )
 
 [node name="fillerGround" type="Sprite" parent="ground"]
-editor/display_folded = true
 position = Vector2( 1550.6, 1367.99 )
 scale = Vector2( 6.17687, 1 )
 texture = ExtResource( 8 )
@@ -266,3 +266,153 @@ position = Vector2( 2357.09, 230.835 )
 position = Vector2( 3014.59, 1042.07 )
 scale = Vector2( 1.09451, 1 )
 texture = ExtResource( 8 )
+
+[node name="wall" type="Node2D" parent="."]
+z_index = -1
+
+[node name="blankWall" type="Sprite" parent="wall"]
+position = Vector2( 264.897, 286.491 )
+texture = ExtResource( 12 )
+
+[node name="blankWall2" type="Sprite" parent="wall"]
+position = Vector2( 845.254, 278.541 )
+texture = ExtResource( 12 )
+
+[node name="blankWall4" type="Sprite" parent="wall"]
+position = Vector2( 254.297, 848.298 )
+texture = ExtResource( 12 )
+
+[node name="blankWall5" type="Sprite" parent="wall"]
+position = Vector2( 834.654, 853.598 )
+texture = ExtResource( 12 )
+
+[node name="blankWall6" type="Sprite" parent="wall"]
+position = Vector2( 1404.41, 938.399 )
+texture = ExtResource( 12 )
+
+[node name="blankWall7" type="Sprite" parent="wall"]
+position = Vector2( 1982.12, 238.79 )
+texture = ExtResource( 12 )
+
+[node name="blankWall8" type="Sprite" parent="wall"]
+position = Vector2( 2550.31, 236.14 )
+texture = ExtResource( 12 )
+
+[node name="blankWall9" type="Sprite" parent="wall"]
+position = Vector2( 2971.67, 244.091 )
+texture = ExtResource( 12 )
+
+[node name="blankWall10" type="Sprite" parent="wall"]
+position = Vector2( 2492.01, 840.348 )
+texture = ExtResource( 12 )
+
+[node name="blankWall11" type="Sprite" parent="wall"]
+position = Vector2( 2945.16, 776.747 )
+texture = ExtResource( 12 )
+
+[node name="blankWall12" type="Sprite" parent="wall"]
+position = Vector2( 1971.52, 826.417 )
+texture = ExtResource( 12 )
+
+[node name="blankWall3" type="Sprite" parent="wall"]
+position = Vector2( 1444.16, 252.041 )
+texture = ExtResource( 12 )
+
+[node name="brick" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 235.868, 295.489 )
+
+[node name="brick2" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 270.537, 321.114 )
+
+[node name="brick3" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 412.346, 134.785 )
+
+[node name="brick4" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 532.933, 492.024 )
+
+[node name="brick5" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 807.269, 116.697 )
+
+[node name="brick6" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 840.43, 139.307 )
+
+[node name="brick7" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 810.283, 163.424 )
+
+[node name="brick8" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 97.3125, 694.007 )
+
+[node name="brick9" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 297.788, 751.286 )
+
+[node name="brick10" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 645.984, 660.846 )
+
+[node name="brick11" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 1074.07, 422.686 )
+
+[node name="brick12" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 1453.92, 472.429 )
+
+[node name="brick13" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 543.484, 861.645 )
+
+[node name="brick14" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 495.25, 861.645 )
+
+[node name="brick15" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 245.425, 1029.5 )
+
+[node name="brick16" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 602.426, 1037.43 )
+
+[node name="brick17" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 848.36, 951.749 )
+
+[node name="brick18" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 934.04, 1092.96 )
+
+[node name="brick19" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 1173.63, 997.763 )
+
+[node name="brick20" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 1609.96, 1086.62 )
+
+[node name="brick21" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 1959.13, 711.839 )
+
+[node name="brick22" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2046.4, 1026 )
+
+[node name="brick23" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2596.97, 835.599 )
+
+[node name="brick24" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2305.02, 919.693 )
+
+[node name="brick25" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2351.04, 897.479 )
+
+[node name="brick26" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 1776.66, 194.626 )
+
+[node name="brick27" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 1970.24, 437.387 )
+
+[node name="brick28" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2887.33, 216.839 )
+
+[node name="brick29" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2887.33, 240.639 )
+
+[node name="brick30" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2628.71, 339.013 )
+
+[node name="brick31" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2550.96, 394.547 )
+
+[node name="brick32" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2043.22, 207.319 )
+
+[node name="brick33" parent="wall" instance=ExtResource( 13 )]
+position = Vector2( 2060.68, 231.119 )
