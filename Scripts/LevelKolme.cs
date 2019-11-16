@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class LevelKaksi : Node2D
+public class LevelKolme : Node
 {
     // Declare member variables here. Examples:
     // private int a = 2;
@@ -13,6 +13,10 @@ public class LevelKaksi : Node2D
         
     }
 
+	private void _on_PlayAgain_pressed()
+	{
+	    GetTree().ChangeScene("res://Scenes/TitleScreen.tscn");
+	}
 }
 
 
