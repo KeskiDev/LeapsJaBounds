@@ -15,7 +15,7 @@ public class TitleScreenScript : Node
 
 	private void _on_PlayButton_pressed()
 	{
-	    GetTree().ChangeScene("res://Scenes/LevelYksi.tscn");
+	    GetTree().ChangeScene("res://Scenes/LevelKaksi.tscn");
 	}
 	
 	private void _on_AboutButton_pressed()
