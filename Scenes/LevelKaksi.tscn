@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/LevelKaksi.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/platform.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/CameraScript.cs" type="Script" id=4]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/CameraScript.cs" type="Script" id=3]
+[ext_resource path="res://Scenes/platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Ground/longPlatform.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Ground/fillerGround.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ground/shortBox.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56.795, 628.166 )
@@ -19,12 +22,64 @@ extents = Vector2( 525.115, 10 )
 extents = Vector2( 59.4564, 309.69 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 517.505, 10 )
+extents = Vector2( 517.505, 49.5183 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 220.606, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 1095.23, 54.3554 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 398.457, 30.844 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 401.182, 31.3643 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 161.499, 247.027 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 159.418, 114.033 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 157.161, 113.341 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 399.933, 31.7482 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 401.261, 31.8792 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 201.309, 33.4765 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 200.757, 32.523 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 286.719, 22.266 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 74.2522, 176.562 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 184.46, 32.3172 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 212.634, 31.6849 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 89.6826, 89.585 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 64.5393, 85.1113 )
 
 [node name="LevelKaksi" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Wall" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 3.0556, 1.22197 )
 
 [node name="Wall" parent="Wall" instance=ExtResource( 2 )]
@@ -43,6 +98,7 @@ position = Vector2( 2047.63, -2.72685 )
 position = Vector2( 1014.04, -584.121 )
 
 [node name="Borders" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 3.0556, 1.22197 )
 
 [node name="left" type="CollisionShape2D" parent="Borders"]
@@ -78,18 +134,182 @@ position = Vector2( 3136.41, 305.908 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders"]
-position = Vector2( 2578.49, 625.41 )
+position = Vector2( 2580.18, 647.274 )
 shape = SubResource( 5 )
 
-[node name="platform" parent="." instance=ExtResource( 3 )]
-position = Vector2( -5.40283, 117.662 )
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Borders"]
+position = Vector2( 2924.33, -10.4236 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
+position = Vector2( 1040.88, 1225.34 )
+shape = SubResource( 7 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -150 )
 current = true
 limit_left = 0
 limit_top = -1000
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Platforms" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="platform" parent="Platforms" instance=ExtResource( 4 )]
+position = Vector2( 192.099, 624.356 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="longPlatform" type="Sprite" parent="Platforms"]
+position = Vector2( 336.393, 1287.9 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform4" type="Sprite" parent="Platforms"]
+position = Vector2( 1933.48, 1288.08 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform2" type="Sprite" parent="Platforms"]
+position = Vector2( 1135.14, 1287.99 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform3" type="Sprite" parent="Platforms"]
+position = Vector2( 2568.43, 716.149 )
+scale = Vector2( 1.32235, 1 )
+texture = ExtResource( 5 )
+
+[node name="fillerGround3" type="Sprite" parent="Platforms"]
+position = Vector2( 1079.56, 978.313 )
+scale = Vector2( 0.636972, 0.458883 )
+texture = ExtResource( 6 )
+
+[node name="fillerGround2" type="Sprite" parent="Platforms"]
+position = Vector2( 1080.99, 686.493 )
+scale = Vector2( 0.636972, 0.458883 )
+texture = ExtResource( 6 )
+
+[node name="fillerGround" type="Sprite" parent="Platforms"]
+position = Vector2( 684.302, 822.772 )
+scale = Vector2( 0.636972, 1 )
+texture = ExtResource( 6 )
+
+[node name="longPlatform5" type="Sprite" parent="Platforms"]
+position = Vector2( 993.225, 517.729 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform6" type="Sprite" parent="Platforms"]
+position = Vector2( 1171.62, 404.949 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform7" type="Sprite" parent="Platforms"]
+position = Vector2( 1335.67, 294.219 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform8" type="Sprite" parent="Platforms"]
+position = Vector2( 1485.36, 171.187 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform9" type="Sprite" parent="Platforms"]
+position = Vector2( 1397.18, 50.2042 )
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform10" type="Sprite" parent="Platforms"]
+position = Vector2( 1481.26, -67.3069 )
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 5 )
+
+[node name="longPlatform11" type="Sprite" parent="Platforms"]
+position = Vector2( 2340.92, 417.548 )
+scale = Vector2( 0.55035, 0.701403 )
+texture = ExtResource( 5 )
+
+[node name="fillerGround4" type="Sprite" parent="Platforms"]
+position = Vector2( 2067.96, 321.168 )
+scale = Vector2( 0.293297, 0.701403 )
+texture = ExtResource( 6 )
+
+[node name="shortBox" type="Sprite" parent="Platforms"]
+editor/display_folded = true
+position = Vector2( 1466.59, 677.252 )
+scale = Vector2( 0.740296, 1 )
+texture = ExtResource( 7 )
+
+[node name="longPlatform" type="Sprite" parent="Platforms/shortBox"]
+editor/display_folded = true
+position = Vector2( 118.13, 174.902 )
+scale = Vector2( 0.620552, 1 )
+texture = ExtResource( 5 )
+
+[node name="shortBox" type="Sprite" parent="Platforms/shortBox/longPlatform"]
+position = Vector2( -25.9583, 23.8503 )
+scale = Vector2( 1.15575, 1 )
+texture = ExtResource( 7 )
+
+[node name="longPlatform2" type="Sprite" parent="Platforms/shortBox"]
+position = Vector2( 96.6521, 400.155 )
+scale = Vector2( 0.717204, 1 )
+texture = ExtResource( 5 )
+
+[node name="platformcollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1012.08, 433.692 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1191.87, 322.996 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 683.573, 819.567 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1081.68, 685.833 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1078.74, 977.991 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1356.27, 211.925 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1506, 88.0898 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1407.89, -31.8835 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1491.67, -149.587 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 2286.02, 359.338 )
+shape = SubResource( 17 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 2066.67, 321.784 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1562.35, 769.46 )
+shape = SubResource( 19 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1548.84, 994.446 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1465.72, 691.52 )
+shape = SubResource( 21 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="platformcollision"]
+position = Vector2( 1541.36, 880.898 )
+shape = SubResource( 22 )
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 135.957, -209.262 )
