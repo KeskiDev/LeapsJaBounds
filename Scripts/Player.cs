@@ -6,7 +6,7 @@ public class Player : KinematicBody2D
     private Vector2 movement = Vector2.Zero;
 	private float move_speed = 400f;
 	private float gravity = 30f;
-	private float jump_force = -970f;//-750f;
+	private float jump_force = -750f;
 	private float extra_jump = -970f;
 	private Vector2 up_direction = Vector2.Up;
 	private bool moving = false;
