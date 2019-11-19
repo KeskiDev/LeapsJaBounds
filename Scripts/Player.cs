@@ -157,6 +157,12 @@ public class Player : KinematicBody2D
 				GetParent<GamePlay>().RemoveChild(key);
 			}
 		}
+		else if(body.IsInGroup("spikes")){
+			//a death animation - something like celeste
+			animation.Play("death");
+			//death scene transition
+			//GetTree().ChangeScene("res://Scenes/LevelKaksi.tscn");
+		}
 	}
 }
 
