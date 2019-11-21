@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Player : KinematicBody2D
+public class LevelTwoPlayert : KinematicBody2D
 {
     private Vector2 movement = Vector2.Zero;
 	private float move_speed = 400f;
@@ -30,7 +30,7 @@ public class Player : KinematicBody2D
 		
 		if(hasPickupKolme){
 			//todo open gate to the next level
-			GetParent<GamePlay>().OpenGate();
+			GetParent<LevelKaksi>().OpenGate();
 			
 		}
 	}
@@ -142,18 +142,18 @@ public class Player : KinematicBody2D
 	    if(body.IsInGroup("pickup")){
 			if(body.Name.Contains("Key1")){
 				hasPickupYksi = true;
-				var key = GetParent<GamePlay>().GetNode("Key1");
-				GetParent<GamePlay>().RemoveChild(key);
+				var key = GetParent<LevelKaksi>().GetNode("Key1");
+				GetParent<LevelKaksi>().RemoveChild(key);
 			}
 			else if(body.Name.Contains("Key2")){
 				hasPickupKaksi = true;
-				var key = GetParent<GamePlay>().GetNode("Key2");
-				GetParent<GamePlay>().RemoveChild(key);
+				var key = GetParent<LevelKaksi>().GetNode("Key2");
+				GetParent<LevelKaksi>().RemoveChild(key);
 			}
 			else if(body.Name.Contains("KingKey")){
 				hasPickupKolme = true;
-				var key = GetParent<GamePlay>().GetNode("KingKey");
-				GetParent<GamePlay>().RemoveChild(key);
+				var key = GetParent<LevelKaksi>().GetNode("KingKey");
+				GetParent<LevelKaksi>().RemoveChild(key);
 			}
 		}
 		else if(body.IsInGroup("spikes")){
@@ -165,7 +165,11 @@ public class Player : KinematicBody2D
 			
 			animation.Play("death");
 			//death scene transition
-			//GetTree().ChangeScene("res://Scenes/LevelKaksi.tscn");
+			GetTree().ChangeScene("res://Scenes/LevelKaksi.tscn");
+		}
+		else if(body.IsInGroup("Enemy")){
+			GD.Print("hit an enemy");
+			GetTree().ChangeScene("res://Scenes/LevelKaksi.tscn");	
 		}
 	}
 }

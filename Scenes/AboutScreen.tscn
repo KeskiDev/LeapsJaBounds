@@ -30,7 +30,8 @@ The catch is you can only move left and right and rotate after you have jumped.
 Jump - Up arrow
 Move Left - 'A'
 Move Right - 'D'
-Rotate 90 degrees - 'R'"
+Rotate clockwise - 'R'
+Rotate counter clockwise - 'T'"
 autowrap = true
 
 [node name="MadeBy" type="Label" parent="."]

@@ -17,6 +17,9 @@ public class GateScript : Node2D
 			//have to change this to be more reusable
 			GetTree().ChangeScene("res://Scenes/LevelKaksi.tscn");
 		}
+		else if(body.IsInGroup("LevelTwoPlayer")){
+			GetTree().ChangeScene("res://Scenes/LevelKolme.tscn");
+		}
 	}
 
 }
