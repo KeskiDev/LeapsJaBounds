@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/TitleScreenScript.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Font/McLaren-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Ground/longPlatform.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Gate/closedGate.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/PickUps/pickUp3.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -123,5 +124,9 @@ shape = SubResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 518.217, 494.869 )
+
+[node name="pickUp3" type="Sprite" parent="."]
+position = Vector2( 504.366, 80.1159 )
+texture = ExtResource( 6 )
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AboutButton" to="." method="_on_AboutButton_pressed"]

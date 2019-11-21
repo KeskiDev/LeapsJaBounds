@@ -14,16 +14,13 @@ public class Enemy : KinematicBody2D
     }
 	
 	public override void _PhysicsProcess(float delta){
-		//1000 - 1150
-		float speed = 20f;
-		if(Position.y == 1000){
-			speed = gravity;
+		if(IsOnFloor()){
+			movement.y = jump_force;
 		}
-		else if(Position.y == 1148){
-			speed = jump_force;
+		else{
+			movement.y = gravity;
 		}
 		
-		movement.y = speed;
 		movement = MoveAndSlide(movement);
 	}
 }
