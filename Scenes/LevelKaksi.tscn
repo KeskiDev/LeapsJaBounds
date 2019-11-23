@@ -123,7 +123,6 @@ position = Vector2( 2047.63, -2.72685 )
 position = Vector2( 1014.04, -584.121 )
 
 [node name="Borders" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 3.0556, 1.22197 )
 
 [node name="left" type="CollisionShape2D" parent="Borders"]
@@ -166,7 +165,9 @@ shape = SubResource( 5 )
 position = Vector2( 2924.33, -10.4236 )
 shape = SubResource( 6 )
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders" groups=[
+"floor",
+]]
 position = Vector2( 1040.88, 1225.34 )
 shape = SubResource( 7 )
 
@@ -396,7 +397,7 @@ scale = Vector2( 1, 1 )
 position = Vector2( 1621.52, -510.49 )
 
 [node name="Enemy" parent="." instance=ExtResource( 16 )]
-position = Vector2( 463.294, 1148.24 )
+position = Vector2( 359.437, 666.799 )
 script = ExtResource( 17 )
 
 [node name="spikes2" type="KinematicBody2D" parent="." groups=[
