@@ -1,22 +1,25 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scripts/LevelKaksi.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/OpenGate.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Gateway.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/CameraScript.cs" type="Script" id=5]
-[ext_resource path="res://Scenes/platform.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Ground/longPlatform.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ground/fillerGround.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ground/shortBox.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Ground/spikes.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scripts/LevelTwoPlayert.cs" type="Script" id=12]
+[ext_resource path="res://Assets/Ground/black.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Gate/Brick.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/CameraScript.cs" type="Script" id=7]
+[ext_resource path="res://Scenes/platform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Ground/longPlatform.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ground/fillerGround.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ground/shortBox.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ground/spikes.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Key2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Key1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/KingKey.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scripts/Enemy.cs" type="Script" id=17]
+[ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scripts/LevelTwoPlayert.cs" type="Script" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56.795, 628.166 )
@@ -105,6 +108,7 @@ openGate = ExtResource( 2 )
 shutGate = ExtResource( 3 )
 
 [node name="Wall" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 3.0556, 1.22197 )
 
 [node name="Wall" parent="Wall" instance=ExtResource( 4 )]
@@ -122,7 +126,100 @@ position = Vector2( 2047.63, -2.72685 )
 [node name="Wall4" parent="Wall" instance=ExtResource( 4 )]
 position = Vector2( 1014.04, -584.121 )
 
+[node name="black" type="Sprite" parent="Wall"]
+position = Vector2( 375.305, -498.402 )
+texture = ExtResource( 5 )
+
+[node name="black5" type="Sprite" parent="Wall"]
+position = Vector2( -643.986, 1377.87 )
+texture = ExtResource( 5 )
+
+[node name="black4" type="Sprite" parent="Wall"]
+position = Vector2( -642.264, 384.774 )
+texture = ExtResource( 5 )
+
+[node name="black3" type="Sprite" parent="Wall"]
+position = Vector2( 3716.55, 276.164 )
+texture = ExtResource( 5 )
+
+[node name="black7" type="Sprite" parent="Wall"]
+position = Vector2( 1660.04, 1731.73 )
+texture = ExtResource( 5 )
+
+[node name="black8" type="Sprite" parent="Wall"]
+position = Vector2( 464.162, 1723.54 )
+texture = ExtResource( 5 )
+
+[node name="black9" type="Sprite" parent="Wall"]
+position = Vector2( 2689.34, -497.808 )
+texture = ExtResource( 5 )
+
+[node name="black6" type="Sprite" parent="Wall"]
+position = Vector2( 2701.94, 1152.78 )
+texture = ExtResource( 5 )
+
+[node name="black2" type="Sprite" parent="Wall"]
+position = Vector2( 1593.99, -1083.53 )
+texture = ExtResource( 5 )
+
+[node name="Brick" type="Sprite" parent="Wall"]
+position = Vector2( 350.347, 246.145 )
+texture = ExtResource( 6 )
+
+[node name="Brick2" type="Sprite" parent="Wall"]
+position = Vector2( 494.188, 68.0559 )
+texture = ExtResource( 6 )
+
+[node name="Brick3" type="Sprite" parent="Wall"]
+position = Vector2( 134.586, 814.66 )
+texture = ExtResource( 6 )
+
+[node name="Brick4" type="Sprite" parent="Wall"]
+position = Vector2( 1799.03, 444.783 )
+texture = ExtResource( 6 )
+
+[node name="Brick5" type="Sprite" parent="Wall"]
+position = Vector2( 1271.62, -253.874 )
+texture = ExtResource( 6 )
+
+[node name="Brick6" type="Sprite" parent="Wall"]
+position = Vector2( 1850.4, 698.217 )
+texture = ExtResource( 6 )
+
+[node name="Brick7" type="Sprite" parent="Wall"]
+position = Vector2( 1062.7, 372.862 )
+texture = ExtResource( 6 )
+
+[node name="Brick8" type="Sprite" parent="Wall"]
+position = Vector2( 1463.4, 85.1798 )
+texture = ExtResource( 6 )
+
+[node name="Brick9" type="Sprite" parent="Wall"]
+position = Vector2( 340.284, 968.704 )
+texture = ExtResource( 6 )
+
+[node name="Brick10" type="Sprite" parent="Wall"]
+position = Vector2( 1259.18, 844.808 )
+texture = ExtResource( 6 )
+
+[node name="Brick11" type="Sprite" parent="Wall"]
+position = Vector2( 1321.13, 535.069 )
+texture = ExtResource( 6 )
+
+[node name="Brick12" type="Sprite" parent="Wall"]
+position = Vector2( 2797.55, 235.654 )
+texture = ExtResource( 6 )
+
+[node name="Brick13" type="Sprite" parent="Wall"]
+position = Vector2( 2456.84, 498.933 )
+texture = ExtResource( 6 )
+
+[node name="Brick14" type="Sprite" parent="Wall"]
+position = Vector2( 2270.99, 158.219 )
+texture = ExtResource( 6 )
+
 [node name="Borders" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 3.0556, 1.22197 )
 
 [node name="left" type="CollisionShape2D" parent="Borders"]
@@ -180,114 +277,115 @@ position = Vector2( 0, -150 )
 current = true
 limit_left = 0
 limit_top = -1000
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="Platforms" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="platform" parent="Platforms" instance=ExtResource( 6 )]
+[node name="platform" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 192.099, 624.356 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="longPlatform" type="Sprite" parent="Platforms"]
 position = Vector2( 336.393, 1287.9 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform4" type="Sprite" parent="Platforms"]
 position = Vector2( 1933.48, 1288.08 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform2" type="Sprite" parent="Platforms"]
 position = Vector2( 1135.14, 1287.99 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform3" type="Sprite" parent="Platforms"]
 position = Vector2( 2568.43, 716.149 )
 scale = Vector2( 1.32235, 1 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="fillerGround3" type="Sprite" parent="Platforms"]
 position = Vector2( 1075.16, 1025.29 )
 scale = Vector2( 0.584118, 0.376666 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="fillerGround2" type="Sprite" parent="Platforms"]
 position = Vector2( 1080.99, 686.493 )
 scale = Vector2( 0.636972, 0.458883 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="fillerGround" type="Sprite" parent="Platforms"]
 position = Vector2( 684.302, 822.772 )
 scale = Vector2( 0.636972, 1 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="longPlatform5" type="Sprite" parent="Platforms"]
 position = Vector2( 993.225, 517.729 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform6" type="Sprite" parent="Platforms"]
 position = Vector2( 1171.62, 404.949 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform7" type="Sprite" parent="Platforms"]
 position = Vector2( 1335.67, 294.219 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform8" type="Sprite" parent="Platforms"]
 position = Vector2( 1421.76, 240.088 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform9" type="Sprite" parent="Platforms"]
 position = Vector2( 1391.88, 119.105 )
 scale = Vector2( 0.5, 1 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform10" type="Sprite" parent="Platforms"]
 position = Vector2( 1473.31, -14.3061 )
 scale = Vector2( 0.5, 1 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform11" type="Sprite" parent="Platforms"]
 position = Vector2( 2340.92, 417.548 )
 scale = Vector2( 0.55035, 0.701403 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="fillerGround4" type="Sprite" parent="Platforms"]
 position = Vector2( 2067.96, 321.168 )
 scale = Vector2( 0.293297, 0.701403 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="shortBox" type="Sprite" parent="Platforms"]
 position = Vector2( 1463.65, 753.597 )
 scale = Vector2( 0.740296, 1 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="longPlatform" type="Sprite" parent="Platforms/shortBox"]
 editor/display_folded = true
 position = Vector2( 59.0649, 174.902 )
 scale = Vector2( 0.502422, 1 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="shortBox" type="Sprite" parent="Platforms/shortBox/longPlatform"]
 position = Vector2( -25.9583, 23.8503 )
 scale = Vector2( 1.15575, 1 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="longPlatform2" type="Sprite" parent="Platforms/shortBox"]
 position = Vector2( 96.6521, 400.155 )
 scale = Vector2( 0.717204, 1 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform12" type="Sprite" parent="Platforms"]
 position = Vector2( 1201.17, -299.259 )
 scale = Vector2( 0.318451, 1 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="longPlatform" type="Sprite" parent="Platforms/longPlatform12"]
 position = Vector2( 1924.47, 88.4245 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="platformcollision" type="StaticBody2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platformcollision"]
 position = Vector2( 1012.08, 433.692 )
@@ -360,7 +458,7 @@ shape = SubResource( 25 )
 [node name="longPlatform" type="Sprite" parent="."]
 position = Vector2( 888.96, 1097.18 )
 scale = Vector2( 0.303757, 0.650831 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="Area2D" type="KinematicBody2D" parent="." groups=[
 "spikes",
@@ -377,13 +475,7 @@ shape = SubResource( 26 )
 [node name="spikes" type="Sprite" parent="Area2D"]
 position = Vector2( 886.413, 980.932 )
 scale = Vector2( 0.869769, 0.772002 )
-texture = ExtResource( 10 )
-
-[node name="Player" parent="." groups=[
-"LevelTwoPlayer",
-] instance=ExtResource( 11 )]
-position = Vector2( 135.957, -209.262 )
-script = ExtResource( 12 )
+texture = ExtResource( 12 )
 
 [node name="Key2" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1000.1, 836.593 )
@@ -397,18 +489,37 @@ scale = Vector2( 1, 1 )
 position = Vector2( 1621.52, -510.49 )
 
 [node name="Enemy" parent="." instance=ExtResource( 16 )]
-position = Vector2( 359.437, 666.799 )
+position = Vector2( 439.326, 1138.6 )
 script = ExtResource( 17 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1717.98, 109.895 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1752.01, -340.608 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Spikes" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2178.86, 320.51 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="spikes2" type="KinematicBody2D" parent="." groups=[
 "spikes",
 ]]
+editor/display_folded = true
 
 [node name="spikes" type="Sprite" parent="spikes2"]
 position = Vector2( 1602.13, 794.71 )
 scale = Vector2( 0.969191, 0.38425 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spikes2"]
 position = Vector2( 1602.19, 796.863 )
 shape = SubResource( 27 )
+
+[node name="Player" parent="." groups=[
+"LevelTwoPlayer",
+] instance=ExtResource( 19 )]
+position = Vector2( 135.957, -209.262 )
+script = ExtResource( 20 )

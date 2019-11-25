@@ -18,26 +18,6 @@ public class Enemy : KinematicBody2D
 	
 	public override void _PhysicsProcess(float delta){
 		
-		if(IsOnWall()){
-			
-			if(Position.y <= 900f){
-				jumping = false;
-			}
-			else{
-				jumping = true;
-				GD.Print("Going up");
-				movement.y = jump_force;		
-			}
-		}
-		else{
-			if(!jumping){
-				GD.Print("Going down");
-				movement.y += gravity;
-			}
-			
-		}
 		
-		
-		movement = MoveAndSlide(movement);
 	}
 }

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/PickUps/needKey.png" type="Texture" id=1]
+
+[node name="needKey" type="Node2D"]
+
+[node name="needKey" type="Sprite" parent="."]
+position = Vector2( -1.90387, -3.29065 )
+texture = ExtResource( 1 )

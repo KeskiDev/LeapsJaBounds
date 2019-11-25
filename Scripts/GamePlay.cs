@@ -34,7 +34,6 @@ public class GamePlay : Node
 		wayIsOpen.SetPosition(openGateLocation);
 		if(canOpen){
 			var gatewayNode = GetNode("Gateway");
-			GD.Print("got gateway");
 			RemoveChild(gatewayNode);
 			AddChild(wayIsOpen);
 			canOpen = false;

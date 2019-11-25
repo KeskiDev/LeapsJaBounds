@@ -64,7 +64,9 @@ script = ExtResource( 1 )
 openGate = ExtResource( 2 )
 shutGate = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="." groups=[
+"Player",
+] instance=ExtResource( 4 )]
 position = Vector2( 104.59, 257.667 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
