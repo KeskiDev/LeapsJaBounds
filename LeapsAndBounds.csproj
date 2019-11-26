@@ -60,6 +60,7 @@
     <Compile Include="Scripts\LevelTwoPlayert.cs" />
     <Compile Include="Scripts\Player.cs" />
     <Compile Include="Scripts\TitleScreenScript.cs" />
+    <Compile Include="Scripts\UIScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

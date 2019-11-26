@@ -79,6 +79,7 @@ limit_bottom = 1180
 script = ExtResource( 5 )
 
 [node name="ground" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="longPlatform" type="Sprite" parent="ground"]
 editor/display_folded = true
@@ -270,6 +271,7 @@ scale = Vector2( 1.09451, 1 )
 texture = ExtResource( 8 )
 
 [node name="wall" type="Node2D" parent="."]
+editor/display_folded = true
 z_index = -1
 
 [node name="blankWall" type="Sprite" parent="wall"]

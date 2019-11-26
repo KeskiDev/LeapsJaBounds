@@ -36,6 +36,7 @@ public class GamePlay : Node
 			var gatewayNode = GetNode("Gateway");
 			RemoveChild(gatewayNode);
 			AddChild(wayIsOpen);
+			//TODO call the UI KingKeyAcquired method
 			canOpen = false;
 		}
 		
